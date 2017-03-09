@@ -1,20 +1,56 @@
+@font-face {
+  font-family: 'Nexa-Bold';
+  src: url('fonts/Nexa-Bold.eot?#iefix') format('embedded-opentype'),  url('fonts/Nexa-Bold.otf')  format('opentype'),
+        url('fonts/Nexa-Bold.woff') format('woff'), url('fonts/Nexa-Bold.ttf')  format('truetype'), url('fonts/Nexa-Bold.svg#Nexa-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexa-Book';
+  src: url('fonts/Nexa-Book.eot?#iefix') format('embedded-opentype'),  url('fonts/Nexa-Book.otf')  format('opentype'),
+        url('fonts/Nexa-Book.woff') format('woff'), url('fonts/Nexa-Book.ttf')  format('truetype'), url('fonts/Nexa-Book.svg#Nexa-Book') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NexaHeavy';
+  src: url('fonts/NexaHeavy.eot?#iefix') format('embedded-opentype'),  url('fonts/NexaHeavy.otf')  format('opentype'),
+        url('fonts/NexaHeavy.woff') format('woff'), url('fonts/NexaHeavy.ttf')  format('truetype'), url('fonts/NexaHeavy.svg#NexaHeavy') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexa-Light';
+  src: url('fonts/Nexa-Light.eot?#iefix') format('embedded-opentype'),  url('fonts/Nexa-Light.otf')  format('opentype'),
+        url('fonts/Nexa-Light.woff') format('woff'), url('fonts/Nexa-Light.ttf')  format('truetype'), url('fonts/Nexa-Light.svg#Nexa-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body {
 	height: 100%;
+   font-family: 'Nexa-Book';
 }
 
-html.mm-opened {
-	margin-top: 0 !important;
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+   font-family: 'NexaHeavy';
 }
 
-#hamburger {
-   border: 1px solid #999;
+#hamburger {  
    display: block;
-   width: 35px;
+   width: 63px;
    padding: 2px 5px;
    position: absolute;
-   left: 10px;   
+   right: 10px;   
    top: 20px;
-    transition: transform .4s ease;    
+   transition: transform .4s ease;
+   z-index: 99999;
+   overflow: hidden;
+   padding: 5px;
+   background: #fff;
 }
 
 /*.mm-opened #hamburger {
@@ -23,46 +59,359 @@ html.mm-opened {
 }
 */
 #hamburger span {
-   background: #999;
-   display: block;
-   height: 3px;
-   margin: 5px 0;
-}
-
-html.mm-opened #hamburger span.top-bar {
-   transform: rotate( 45deg );
-   top: 9px;
-}
-html.mm-opened #hamburger span.middle-bar {
-   opacity: 0;
-}
-html.mm-opened #hamburger span.bottom-bar {
-   transform: rotate( -45deg );
-   top: -7px;
-}
-
-#hamburger {
-   overflow: hidden;
-}
-#hamburger span {
    position: relative;
    transform: rotate( 0 );
    top: 0;
-   left: 0;
+   right: 0;
    opacity: 1;
-
    transition: none 0.5s ease;
    transition-property: transform, top, left, opacity;
+   background: #29235c;
+   display: block;
+   height: 9px;
+   width: 100%;
+   margin: 4px 0;
+   border-radius: 4px;
 }
 
-html.mm-opened #hamburger span.middle-bar {
-   left: -40px;
+.main-navigation {
+  background: #43b9ba;  
 }
 
-.mm-menu.mm-theme-dark .mm-navbar.mm-navbar-bottom-1 a {
-	transition: .5s all ease;
+.main-navigation li {
+  float: none;
 }
 
-.mm-menu.mm-theme-dark .mm-navbar.mm-navbar-bottom-1 a:hover {
-	background: #675B51;
+.main-navigation a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #fff;
+}
+
+.site-header {
+   padding-top: 25px;
+   padding-bottom: 25px;
+}
+
+.section1-container {
+   padding-top: 60px;
+   padding-bottom: 110px;
+   border-top: 1px solid #9491ad;
+   border-bottom: 1px solid #9491ad;
+   background: #29235c url('img/vid-bg.png') no-repeat bottom left;
+}
+
+.section1-container h1,
+.section3-container h1 {
+   font-size: 70px;
+   color: #fff;
+   margin-bottom: 35px;
+}
+
+.vidwrap {
+   margin-bottom: 55px;
+}
+
+.vidcontent {
+   color: #fff;
+   font-size: 20px;
+}
+
+.section2-container {
+   padding-top: 85px;
+   padding-bottom: 85px;
+   color: #29235c;
+}
+
+.section2-container h2 {
+   font-size: 45px;
+   color: #29235c;
+   margin-bottom: 30px;
+}
+
+.newsletter-form {
+   position: relative;
+   display: block;
+}
+
+.newsletter-form input {
+   height: 42px;
+   border: 1px solid #f1f1f1;
+   border-radius: 21px;
+}
+
+.newsletter-form .input-email {
+   width: 100%;
+   padding-right: 110px;
+   padding-left: 10px;
+}
+
+.newsletter-form .input-submit {
+   background: #f0e442;
+   border-top-left-radius: 0;
+   border-bottom-left-radius: 0;
+   font-family: "NexaHeavy";
+   font-size: 20px;
+   padding-top: 0;
+   padding-bottom: 0;
+   box-shadow: none;
+   width: 108px;
+   position: absolute;
+   top: 0;
+   right: 0;
+}
+
+.section3-container {
+   background: #43b9ba;
+   padding-top: 45px;
+   padding-bottom: 30px;
+}
+
+.icon-wrap {
+   margin-bottom: 20px;
+}
+
+.modal-backdrop {
+   background: transparent;
+   z-index: auto;
+}
+
+.modal {
+   background: rgba(0,0,0,.5);
+}
+
+.modal-header {
+   display: block;
+   border-bottom: 0;
+}
+
+.close {
+   opacity: 1;
+}
+
+.modal-body {
+   color: #29235c;
+}
+
+.modal-content {
+  background: rgba(255,255,255,.85);
+}
+
+.modal-header {
+  padding-bottom: 0;
+}
+
+.modal-body h3 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.section4-container {
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+h2.title-light {
+  color: #29235c;
+  font-size: 30px;
+  font-family: 'Nexa-Light';
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title-light img {
+  margin-top: 20px;
+}
+
+/* .slides {
+  margin-left: -17px;
+} */
+
+.slides {
+  font-family: 'Nexa-Light';
+  font-size: 25px;
+}
+
+.site-footer {
+  background: #29265b;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  color: #fff;
+}
+
+.footer-logo {
+  text-align: center;
+}
+
+.footer-logo img {
+  display: block;
+  margin: auto;
+}
+
+.footer-widget-1 {
+  margin: 20px auto;
+}
+
+.list-inline li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 40px;
+  -webkit-transition: .5s all ease;
+  -o-transition: .5s all ease;
+  transition: .5s all ease;
+}
+
+.footer-social {
+  margin-left: 0;
+}
+
+.footer-social a:hover {
+  text-decoration: none;
+  color: #43b9ba;
+}
+
+.site-info {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.img-ad {
+  margin: 80px auto 40px;
+}
+
+.section3-container h1 {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+
+  body {
+    font-size: 25px;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  .main-navigation {
+    margin-top: 30px;
+    display: block;
+    background: #fff;
+  }
+
+  .main-navigation a {
+    font-size: 25px;
+    color: #29265b;
+    transition: .5s all ease;
+    border-bottom: 0;
+    padding: 0;
+  }
+
+  .main-navigation a:hover {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .main-navigation .menu-menu-1-container {
+    display: table;
+    width: 100%;
+  }
+
+  .main-navigation ul {
+    display: table-row;
+  }
+  
+  .main-navigation li {
+    display: table-cell;
+    float: none;
+    text-align: right;
+  }
+
+  .section1-container h1, .section3-container h1 {
+    font-size: 70px;
+  }
+
+  .section2-container h2 {
+    font-size: 60px;
+    margin-top: 40px;
+  }
+
+  .section2-container p {
+    margin-bottom: 40px;
+  }
+
+  span.firstWord {
+    display: block;
+  }
+
+  .newsletter-form .input-email {
+    padding-left: 30px;
+  }
+
+  .newsletter-form input {
+    height: 80px;
+    border-radius: 40px;
+  }
+
+  .newsletter-form input:focus {
+    outline: 0;
+  }
+
+  .newsletter-form .input-submit {
+    width: 160px;
+  }
+
+  h2.title-light {
+    font-size: 60px;
+    text-align: left;
+  }
+
+  .footer-widget-1 {
+    margin-top: 0;
+  }
+
+  .projectDetails {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .projectDetails .close {
+    text-align: center;
+    line-height: 30px;
+    color: #43b9ba;
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    font-family: 'Nexa-Light';
+    padding-top: 2px;
+  }
+
+  .projectDetails h2 {
+    color: #29235c;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .projectDetails a {
+    color: #fff;
+  }
+
+  .showDefLg.active img {
+    border: 5px solid #29235c;
+  }
+
+  .slide-content {
+    margin-right: 40px;
+  }
+
+  .section3-container h1 {
+    text-align: left;
+  }
+
 }
